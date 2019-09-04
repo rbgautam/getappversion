@@ -30,9 +30,9 @@ def get_app_version():
                 curr_version = de.get_text()
             desc.append(de.get_text().strip())
         print(curr_version) 
-        if str('7.8') in curr_version:
-            print('version updtaed')
-            rt.stop()
+        # if str('7.8') in curr_version:
+        #     print('version updtaed')
+        #     rt.stop()
         
 
 
@@ -50,7 +50,7 @@ def get_soup(url, params):
 
 def request_validation_in_intervals():
     global rt
-    rt = interval_timer.RepeatedTimer(1, get_app_version) # it auto-starts, no need of rt.start()
+    rt = interval_timer.RepeatedTimer(600, get_app_version) # it auto-starts, no need of rt.start()
     
     try:
         sleep(10000) # your long-running job goes here...
